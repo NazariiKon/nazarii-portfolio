@@ -32,5 +32,21 @@ export const PROJECTS_IMAGES = {
     "/projects/jobsdublin/sign_in_via_google.png",
     "/projects/jobsdublin/user_apply_cv.png",
     "/projects/jobsdublin/user_apply_noCV_DandD_zone.png"
+  ],
+  "diploma": [
+    "/projects/diploma/Account.png",
+    "/projects/diploma/Advertisement.png",
+    "/projects/diploma/Carts.png",
+    "/projects/diploma/Categories.png",
+    "/projects/diploma/Orders.png",
+  ],
+  "crocodile": [
+    "/projects/crocodile/chat-drawing.png",
+    "/projects/crocodile/login.png",
+  ],
+  "memory": [
+    "/projects/memory/cards.png",
+    "/projects/memory/last.png",
+    "/projects/memory/main.png",
   ]
 };

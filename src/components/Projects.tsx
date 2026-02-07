@@ -23,7 +23,7 @@ const projects: Project[] = [
         period: "Jan 2026 - Present",
         subtitle: "QR Menu Builder & Ordering System",
         description:
-            "Digital QR menus for small venues. Owners manage venues, categories, items, prices, and photos in an admin panel, then print/download QR codes. Guests browse a mobile-first menu, add items to a cart, and share an order via WhatsApp.",
+            "Full-stack QR menu CMS for small venues that replaces paper menus with dynamic QR codes. Venue owners manage venues, categories, items, prices, and photos in an admin panel and instantly publish changes via printable/downloadable QR codes. Guests open a mobile-first menu, add items to a cart, and share a pre-filled order via WhatsApp, cutting waiter time and printing costs.",
         tech: ["React", "Next.js", "TypeScript", "FastAPI", "Supabase", "TailwindCSS", "shadcn/ui"],
         liveUrl: "https://menu-plus-client.vercel.app/",
         githubUrl: "https://github.com/NazariiKon/menu-plus",
@@ -35,8 +35,8 @@ const projects: Project[] = [
         period: "Jul - Sep 2025",
         subtitle: "Irish Job Board Platform",
         description:
-            "Indeed-style job board for Ireland. Job seekers can search and apply with CV upload, while employers manage vacancies and review applications in a dashboard. Includes Google sign-in, pagination, and role-based access.",
-        tech: ["React", "TypeScript", "Vite", "Redux", "FastAPI", "PostgreSQL", "Google OAuth", "Docker"],
+            "Full-stack job board tailored for Ireland's market, inspired by Indeed. Job seekers search by keyword/location, view details, log in via Google/email, upload CVs (drag-and-drop with preview), and apply seamlessly. Employers manage company profiles, post/edit vacancies, review applicants/CVs in a dashboard, and approve/reject with pagination & search — streamlining local hiring for Dublin & beyond.",
+        tech: ["React", "TypeScript", "Vite", "Redux", "TailwindCSS", "FastAPI", "PostgreSQL", "Google OAuth", "Docker"],
         liveUrl: "https://jobsdublin.onrender.com/",
         githubUrl: "https://github.com/NazariiKon/jobsdublin.ie",
         images: PROJECTS_IMAGES.jobsdublin,
@@ -45,13 +45,35 @@ const projects: Project[] = [
         id: "classifieds",
         title: "Online Classifieds Platform",
         period: "Jun - Sep 2022",
-        subtitle: "Graduation Capstone (Team Lead)",
+        subtitle: "Classifieds Marketplace (Team Lead)",
         description:
-            "Graduation team project (4 developers + 3 designers). A classifieds marketplace with authentication, role-based permissions, ad posting, image uploads, and advanced search/filters. I led the dev team and built most of the backend API and data model.",
-        tech: ["ASP.NET Core", "Entity Framework", "JWT", "Google OAuth", "Swagger", "React", "PrimeReact", "SQLite"],
-        githubUrl: "https://github.com/NazariiKon/graduation-project",
-        images: ["/projects/jobsdublin/home_page.png"],
+            "Led 4-developer team in building a full-featured classifieds marketplace. Users register/login (JWT/Google OAuth), post ads with images, filter by category/subcategory/user, add to cart, and create orders. Features VIP ads, password reset, hierarchical categories; I focused on backend API design, Entity Framework data model, and Swagger docs.",
+        tech: ["ASP.NET Core", "Entity Framework Core", "SQLite", "JWT Auth", "Google OAuth", "Swagger", "React", "PrimeReact"],
+        githubUrl: "https://github.com/NazariiKon/DiplomnaOLX",
+        images: PROJECTS_IMAGES.diploma,
     },
+    {
+        id: "crocodile-chat",
+        title: "Crocodile Chat",
+        period: "2019",
+        subtitle: "Real-time Drawing Chat App",
+        description:
+            "First project: real‑time collaborative drawing + chat app for multiple clients. Users connect via UDP (text chat) and TCP (image sync), draw on shared InkCanvas, and see live updates from all participants — tested with simultaneous multi‑client sessions.",
+        tech: ["C#", "WPF", "InkCanvas", "UDP", "TCP", "BinaryFormatter"],
+        githubUrl: "https://github.com/NazariiKon/chat-and-paint",
+        images: PROJECTS_IMAGES.crocodile,
+    },
+    {
+        id: "memory-match-game",
+        title: "Memory Match Game",
+        period: "2022",
+        subtitle: "WPF Memory Card Game",
+        description:
+            "1st year college coursework: WPF memory game with 6x4 animal card grid, timer, random shuffle, and matching logic. Players flip cards via PLAY button to find pairs before time runs out.",
+        tech: ["C#", "WPF", "XAML", "DispatcherTimer", "ImageBrush"],
+        githubUrl: "https://github.com/NazariiKon/memory-match-game-wpf",
+        images: PROJECTS_IMAGES.memory,
+    }
 ];
 
 export function Projects() {
