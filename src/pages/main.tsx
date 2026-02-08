@@ -4,6 +4,7 @@ import { Navbar } from "../components/Navbar";
 import { Projects } from "../components/Projects";
 import { Skills } from "../components/Skills";
 import { Contact } from "../components/Contact";
+import { Honors } from "../components/Awards";
 
 export default function Main() {
     return (
@@ -12,6 +13,7 @@ export default function Main() {
             <main>
                 <Hero />
                 <Projects />
+                <Honors />
                 <Skills />
                 <Journey />
                 <Contact />
