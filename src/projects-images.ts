@@ -48,5 +48,10 @@ export const PROJECTS_IMAGES = {
     "/projects/memory/cards.png",
     "/projects/memory/last.png",
     "/projects/memory/main.png",
+  ],
+  "collegeReception": [
+    "/projects/collegeReception/main.png",
+    "/projects/collegeReception/info.png",
+    "/projects/collegeReception/add.png",
   ]
 };

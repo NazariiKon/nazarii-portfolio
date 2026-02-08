@@ -50,8 +50,3 @@ npm run build
 
 ## License
 MIT (or choose a license you prefer)
-
-## Contact
-- GitHub: https://github.com/NazariiKon
-- LinkedIn: (add your LinkedIn)
-- Email: (add your email)

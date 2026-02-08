@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 const sections = [
     { id: "hero", label: "Home" },
     { id: "projects", label: "Projects" },
+    { id: "honors", label: "Awards & Honors" },
     { id: "skills", label: "Skills" },
     { id: "journey", label: "My Journey" },
     { id: "contacts", label: "Contacts" },
@@ -24,7 +25,7 @@ export function Navbar() {
         const onScroll = () => {
             setScrolled(window.scrollY > 10);
 
-            const ids = ["hero", "projects", "skills", "journey"];
+            const ids = ["hero", "projects", "honors", "skills", "journey", "contacts"];
             const margins = 150;
             let current = "hero";
             let minDistance = Number.POSITIVE_INFINITY;

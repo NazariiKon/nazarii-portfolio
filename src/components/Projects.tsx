@@ -64,15 +64,14 @@ const projects: Project[] = [
         images: PROJECTS_IMAGES.crocodile,
     },
     {
-        id: "memory-match-game",
-        title: "Memory Match Game",
-        period: "2022",
-        subtitle: "WPF Memory Card Game",
-        description:
-            "1st year college coursework: WPF memory game with 6x4 animal card grid, timer, random shuffle, and matching logic. Players flip cards via PLAY button to find pairs before time runs out.",
-        tech: ["C#", "WPF", "XAML", "DispatcherTimer", "ImageBrush"],
-        githubUrl: "https://github.com/NazariiKon/memory-match-game-wpf",
-        images: PROJECTS_IMAGES.memory,
+        id: "college-reception",
+        title: "College Reception",
+        period: "2023",
+        subtitle: "WinForms Student Management System",
+        description: "Desktop app for college reception: main table with JOINed student data (name, major, passport, education, graduation, awards), full-text search across all 6 fields, add new students form. Double-click opens exam details with streams by speciality, exam dates, and automatic grade display",
+        tech: ["C#", ".NET 6", "WinForms", "SQLite", "DataGridView", "Entity Framework Core"],
+        githubUrl: "https://github.com/NazariiKon/college-reception-WF-SQLite",
+        images: PROJECTS_IMAGES.collegeReception,
     }
 ];
 
