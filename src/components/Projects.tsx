@@ -53,17 +53,6 @@ const projects: Project[] = [
         images: PROJECTS_IMAGES.diploma,
     },
     {
-        id: "crocodile-chat",
-        title: "Crocodile Chat",
-        period: "2019",
-        subtitle: "Real-time Drawing Chat App",
-        description:
-            "First project: real‑time collaborative drawing + chat app for multiple clients. Users connect via UDP (text chat) and TCP (image sync), draw on shared InkCanvas, and see live updates from all participants — tested with simultaneous multi‑client sessions.",
-        tech: ["C#", "WPF", "InkCanvas", "UDP", "TCP", "BinaryFormatter"],
-        githubUrl: "https://github.com/NazariiKon/chat-and-paint",
-        images: PROJECTS_IMAGES.crocodile,
-    },
-    {
         id: "college-reception",
         title: "College Reception",
         period: "2023",
@@ -72,7 +61,28 @@ const projects: Project[] = [
         tech: ["C#", ".NET 6", "WinForms", "SQLite", "DataGridView", "Entity Framework Core"],
         githubUrl: "https://github.com/NazariiKon/college-reception-WF-SQLite",
         images: PROJECTS_IMAGES.collegeReception,
-    }
+    },
+    {
+        id: "memory-match-game",
+        title: "Memory Match Game",
+        period: "2022",
+        subtitle: "College WPF project",
+        description: "WPF desktop game: flip cards to reveal animal images, match pairs, timer runs in real time, 6x4 grid, 12 pairs total. Start screen, gameplay with auto timer, and end state when all pairs are matched.",
+        tech: ["C#", ".NET Framework", "WPF", "XAML Grid layouts", "DispatcherTimer", "ImageBrush + Resource PNGs"],
+        githubUrl: "https://github.com/NazariiKon/memory-match-game-wpf",
+        images: PROJECTS_IMAGES.memory,
+    },
+    {
+        id: "crocodile-chat",
+        title: "Crocodile Chat",
+        period: "2019",
+        subtitle: "Real-time Drawing Chat App",
+        description:
+            "First project: real-time collaborative drawing + chat app for multiple clients. Users connect via UDP (text chat) and TCP (image sync), draw on shared InkCanvas, and see live updates from all participants — tested with simultaneous multi‑client sessions.",
+        tech: ["C#", "WPF", "InkCanvas", "UDP", "TCP", "BinaryFormatter"],
+        githubUrl: "https://github.com/NazariiKon/chat-and-paint",
+        images: PROJECTS_IMAGES.crocodile,
+    },
 ];
 
 export function Projects() {
