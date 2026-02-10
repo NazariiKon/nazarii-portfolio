@@ -55,7 +55,7 @@ const projects: Project[] = [
     {
         id: "college-reception",
         title: "College Reception",
-        period: "2023",
+        period: "Apr 2023",
         subtitle: "WinForms Student Management System",
         description: "Desktop app for college reception: main table with JOINed student data (name, major, passport, education, graduation, awards), full-text search across all 6 fields, add new students form. Double-click opens exam details with streams by speciality, exam dates, and automatic grade display",
         tech: ["C#", ".NET 6", "WinForms", "SQLite", "DataGridView", "Entity Framework Core"],
@@ -63,9 +63,19 @@ const projects: Project[] = [
         images: PROJECTS_IMAGES.collegeReception,
     },
     {
+        id: "slingshot-castle-siege",
+        title: "Slingshot Castle Siege",
+        period: "Jun 2022",
+        subtitle: "Angry Birds-style Physics Game",
+        description: "Unity 3D physics game with slingshot mechanics: drag-to-aim system launches destructible projectiles at layered castle structures across 2 levels. Real-time Rigidbody collisions cause chain destruction reactions, level progression with snapshot UI, and win condition when castles fully collapse.",
+        tech: ["Unity 3D", "C#", "Rigidbody Physics", "UI Canvas", "Particle Systems"],
+        githubUrl: "https://github.com/NazariiKon/Castle",
+        images: PROJECTS_IMAGES.castle,
+    },
+    {
         id: "memory-match-game",
         title: "Memory Match Game",
-        period: "2022",
+        period: "May 2022",
         subtitle: "College WPF project",
         description: "WPF desktop game: flip cards to reveal animal images, match pairs, timer runs in real time, 6x4 grid, 12 pairs total. Start screen, gameplay with auto timer, and end state when all pairs are matched.",
         tech: ["C#", ".NET Framework", "WPF", "XAML Grid layouts", "DispatcherTimer", "ImageBrush + Resource PNGs"],
@@ -73,16 +83,36 @@ const projects: Project[] = [
         images: PROJECTS_IMAGES.memory,
     },
     {
+        id: "apple-picker",
+        title: "Apple Picker",
+        period: "May 2022",
+        subtitle: "Unity Arcade Catch Game",
+        description: "Classic Unity arcade game: moving apple tree drops apples at increasing speed, catch with basket (3 lives system) for 100 points each. Progressive difficulty ramps every 5 apples, PlayerPrefs high score persistence, collision-based scoring, and dynamic life management with auto scene transitions.",
+        tech: ["Unity 2D", "C#", "Rigidbody2D", "Colliders", "PlayerPrefs", "UI Text"],
+        githubUrl: "https://github.com/NazariiKon/ApplePicker",
+        images: PROJECTS_IMAGES.applePicker,
+    },
+    {
+        id: "androidApp",
+        title: "Shop Android App",
+        period: "May 2022",
+        subtitle: "Java E-commerce with .NET Core Backend",
+        description: "Full-stack e-commerce mobile app with user authentication, product CRUD operations, image upload/download. Java Android client consumes .NET Core 8 REST API (PostgreSQL, EF Core) with JWT auth, Retrofit networking, Glide image loading from static file server, and Material Design UI.",
+        tech: ["Java", "AndroidX", ".NET Core 8", "Retrofit", "Glide", "EF Core", "PostgreSQL", "JWT Auth", "Material Design"],
+        githubUrl: "https://github.com/NazariiKon/androidApp",
+        images: PROJECTS_IMAGES.shopAndroid
+    },
+    {
         id: "crocodile-chat",
         title: "Crocodile Chat",
-        period: "2019",
+        period: "Jun 2021",
         subtitle: "Real-time Drawing Chat App",
         description:
             "First project: real-time collaborative drawing + chat app for multiple clients. Users connect via UDP (text chat) and TCP (image sync), draw on shared InkCanvas, and see live updates from all participants — tested with simultaneous multi‑client sessions.",
         tech: ["C#", "WPF", "InkCanvas", "UDP", "TCP", "BinaryFormatter"],
         githubUrl: "https://github.com/NazariiKon/chat-and-paint",
         images: PROJECTS_IMAGES.crocodile,
-    },
+    }
 ];
 
 export function Projects() {

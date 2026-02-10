@@ -34,6 +34,14 @@ export const PROJECTS_IMAGES = {
     "/projects/jobsdublin/user_apply_noCV_DandD_zone.png"
   ],
   "diploma": [
+    "/projects/diploma/main.png",
+    "/projects/diploma/login.png",
+    "/projects/diploma/chat.png",
+    "/projects/diploma/cart.png",
+    "/projects/diploma/add.png",
+    "/projects/diploma/profile.png",
+    "/projects/diploma/order.png",
+    "/projects/diploma/category.png",
     "/projects/diploma/Account.png",
     "/projects/diploma/Advertisement.png",
     "/projects/diploma/Carts.png",
@@ -53,5 +61,18 @@ export const PROJECTS_IMAGES = {
     "/projects/collegeReception/main.png",
     "/projects/collegeReception/info.png",
     "/projects/collegeReception/add.png",
+  ],
+  "castle": [
+    "/projects/castle/main.png",
+    "/projects/castle/shoot.png",
+  ],
+  "applePicker": [
+    "/projects/applePicker/main.png",
+  ],
+  "shopAndroid": [
+    "/projects/shopAndroid/main.png",
+    "/projects/shopAndroid/add.png",
+    "/projects/shopAndroid/login.png",
+    "/projects/shopAndroid/api.png",
   ]
 };
