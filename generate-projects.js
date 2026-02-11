@@ -2,24 +2,34 @@
 import fs from 'fs';
 import path from 'path';
 
-const menuPath = './public/projects/menu';
-const jobsPath = './public/projects/jobsdublin';
+const projectsDir = './public/projects';
 
-const menuFiles = fs.readdirSync(menuPath)
-  .filter(f => f.endsWith('.png'))
-  .map(f => `/projects/menu/${f}`);
+function scanProjects(dir) {
+  const projects = {};
+  
+  const projectDirs = fs.readdirSync(dir, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name);
+  
+  for (const projectName of projectDirs) {
+    const projectPath = path.join(dir, projectName);
+    const files = fs.readdirSync(projectPath)
+      .filter(f => f.endsWith('.png') || f.endsWith('.jpg') || f.endsWith('.jpeg'))
+      .map(f => `/projects/${projectName}/${f}`);
+    
+    projects[projectName] = files;
+  }
+  
+  return projects;
+}
 
-const jobsFiles = fs.readdirSync(jobsPath) 
-  .filter(f => f.endsWith('.png'))
-  .map(f => `/projects/jobsdublin/${f}`);
+const projects = scanProjects(projectsDir);
 
-const projects = {
-  menu: menuFiles,
-  jobsdublin: jobsFiles
-};
-
-fs.writeFileSync('./src/projects-images.ts', 
+fs.writeFileSync(
+  './src/projects-images.ts',
   `export const PROJECTS_IMAGES = ${JSON.stringify(projects, null, 2)};`
 );
 
 console.log('✅ Generated projects-images.ts');
+console.log('Projects found:', Object.keys(projects));
+console.log('Total images:', Object.values(projects).reduce((sum, imgs) => sum + imgs.length, 0));

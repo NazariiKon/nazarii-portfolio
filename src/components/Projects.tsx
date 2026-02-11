@@ -103,6 +103,18 @@ const projects: Project[] = [
         images: PROJECTS_IMAGES.shopAndroid
     },
     {
+        id: "book-catalog",
+        title: "Book Catalog API",
+        period: "Feb 2022",
+        subtitle: "React + Spring Boot Image Gallery",
+        description:
+            "Educational full-stack app with image cropper, multiple file uploads via Base64, and book catalog management. React frontend crops/uploads images that persist in PostgreSQL + filesystem, then links them to books via REST API. Demonstrates Axios integration, JPA relationships (Author→Book→Images), and Docker PostgreSQL.",
+        tech: ["React", "Spring Boot", "Axios", "PostgreSQL", "JPA/Hibernate", "Cropper.js", "Docker"],
+        liveUrl: "",
+        githubUrl: "https://github.com/NazariiKon/SpringBoot",
+        images: PROJECTS_IMAGES.books,
+    },
+    {
         id: "crocodile-chat",
         title: "Crocodile Chat",
         period: "Jun 2021",

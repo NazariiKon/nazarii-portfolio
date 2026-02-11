@@ -14,7 +14,7 @@ A personal portfolio website built with React and Tailwind CSS. It showcases my 
 ## Tech Stack
 - React + TypeScript (Vite)
 - Tailwind CSS
-- Icons: react-icons (local icons, no external hotlinking)
+- Icons: react-icons
 
 ## Getting Started
 1) Install dependencies
@@ -23,25 +23,10 @@ npm install
 2) Start dev server
 npm run dev
 
-3) Build for production
-npm run build
-
-4) Preview production build
-npm run preview
-
 ## Updating project screenshots
-Screenshots are served from /public/projects.
-
-If you add/remove images, regenerate the lists:
-node generate-projects.js
-
-This will update:
-- src/projects-images.ts
-
-## Customization
-- Update project data inside ProjectsSection.tsx (title, period, description, tech, links).
-- Update SkillsSection.tsx to add/remove skills or categories.
-- Global styles and animations are in src/index.css.
+1. Add screenshots to `/public/projects/[project-name]/`
+2. Run `node generate-projects.js`
+3. Use `PROJECTS_IMAGES.[project-name]` in components
 
 ## Deployment
 This project can be deployed to any static hosting (e.g., Vercel/Netlify).
