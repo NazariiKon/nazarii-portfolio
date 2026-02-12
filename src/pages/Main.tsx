@@ -5,6 +5,7 @@ import { Projects } from "../components/Projects";
 import { Skills } from "../components/Skills";
 import { Contact } from "../components/Contact";
 import { Honors } from "../components/Awards";
+import { Chat } from "@/components/Chat";
 
 export default function Main() {
     return (
@@ -18,6 +19,7 @@ export default function Main() {
                 <Journey />
                 <Contact />
             </main>
+            <Chat />
         </div>
     );
 }
