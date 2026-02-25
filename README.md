@@ -10,6 +10,7 @@ A personal portfolio website built with React and Tailwind CSS. It showcases my 
 - “Screenshots” button opens a responsive fullscreen modal with a carousel (works on mobile and desktop).
 - Skills section grouped by categories with animated icons on hover.
 - “Show more / Show less” projects toggle.
+- AI chat assistant that lets visitors chat with me directly on the site.
 
 ## Tech Stack
 - React + TypeScript (Vite)

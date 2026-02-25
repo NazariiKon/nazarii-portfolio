@@ -7,6 +7,8 @@ type Award = {
     prize?: string;
     description: string;
     link?: { label: string; href: string };
+    icon?: string;
+    stats?: { icon: string; label: string; value: string }[];
 };
 
 const awards: Award[] = [
@@ -20,7 +22,28 @@ const awards: Award[] = [
         link: {
             label: "Read More",
             href: "https://www.dcu.ie/computing/news/2025/may/datalex-dcu-best-dime-project-award"
-        }
+        },
+        icon: "🏆",
+        stats: [
+            { icon: "🎯", label: "Competing Projects", value: "44" },
+            { icon: "⭐", label: "Selection", value: "Winner" },
+        ],
+    },
+    {
+        id: "compsoc-ctf-2026",
+        title: "2nd Place — CompSoc Annual CTF 2026",
+        date: "February 2026",
+        organization: "University of Galway",
+        description: "Placed 2nd out of 30 teams competing from across Ireland in CompSoc's Annual CTF — one of the country's largest student-run Capture the Flag competitions. Competing as team \"VI KA\", solved challenges across web security, cryptography, and forensics.",
+        link: {
+            label: "Read More",
+            href: "https://www.linkedin.com/posts/nazariik_im-proud-to-have-been-part-of-the-team-ugcPost-7429313785196118016-TaXH?utm_source=share&utm_medium=member_desktop&rcm=ACoAADgXqc0BKoJxvwrC1qCZ6-BVPhAOUDkJuVw"
+        },
+        icon: "🥈",
+        stats: [
+            { icon: "🎯", label: "Competing Teams", value: "30" },
+            { icon: "🌐", label: "Placement", value: "2nd" },
+        ],
     },
 ];
 
@@ -53,142 +76,169 @@ export function Honors() {
 
                 {/* Awards Grid */}
                 <div className="mx-auto max-w-4xl space-y-8">
-                    {awards.map((award, index) => (
-                        <div
-                            key={award.id}
-                            className="group relative animate-fadeInUp"
-                            style={{ animationDelay: `${0.3 + index * 0.15}s` }}
-                        >
-                            {/* Main Card */}
-                            <div className="relative rounded-2xl border border-slate-200/80 bg-white/80 backdrop-blur-sm p-8 sm:p-10 shadow-sm transition-all duration-500 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-100/50 hover:-translate-y-2">
-                                {/* Top gradient line */}
-                                <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+                    {awards.map((award, index) => {
+                        const isCTF = award.id === "compsoc-ctf-2026";
+                        return (
+                            <div
+                                key={award.id}
+                                className="group relative animate-fadeInUp"
+                                style={{ animationDelay: `${0.3 + index * 0.15}s` }}
+                            >
+                                {/* Main Card */}
+                                <div className={`relative rounded-2xl border bg-white/80 backdrop-blur-sm p-8 sm:p-10 shadow-sm transition-all duration-500 hover:-translate-y-2 ${isCTF
+                                    ? "border-slate-200/80 hover:border-slate-300 hover:shadow-2xl hover:shadow-slate-200/60"
+                                    : "border-slate-200/80 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-100/50"
+                                    }`}>
+                                    {/* Top gradient line */}
+                                    <div className={`absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 ${isCTF ? "via-slate-400/50" : "via-blue-400/50"
+                                        }`}></div>
 
-                                {/* Trophy Icon - Floating on the side */}
-                                <div className="absolute -left-6 top-8 hidden sm:flex">
-                                    <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 shadow-xl shadow-yellow-500/50 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                        <span className="text-4xl">🏆</span>
-                                        {/* Pulse ring */}
-                                        <div className="absolute inset-0 rounded-2xl bg-yellow-400/30 animate-ping"></div>
-                                        {/* Shine effect */}
-                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-transparent via-white/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+                                    {/* Trophy/Medal Icon - Floating on the side */}
+                                    <div className="absolute -left-6 top-8 hidden sm:flex">
+                                        <div className={`relative flex h-20 w-20 items-center justify-center rounded-2xl shadow-xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 ${isCTF
+                                            ? "bg-gradient-to-br from-slate-300 via-slate-400 to-slate-500 shadow-slate-400/50"
+                                            : "bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 shadow-yellow-500/50"
+                                            }`}>
+                                            <span className="text-4xl">{award.icon ?? "🏆"}</span>
+                                            {/* Pulse ring */}
+                                            <div className={`absolute inset-0 rounded-2xl animate-ping ${isCTF ? "bg-slate-400/30" : "bg-yellow-400/30"
+                                                }`}></div>
+                                            {/* Shine effect */}
+                                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-transparent via-white/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                {/* Mobile Trophy */}
-                                <div className="mb-6 inline-flex sm:hidden">
-                                    <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 shadow-lg shadow-yellow-500/50">
-                                        <span className="text-3xl">🏆</span>
-                                        <div className="absolute inset-0 rounded-2xl bg-yellow-400/30 animate-ping"></div>
+                                    {/* Mobile Trophy/Medal */}
+                                    <div className="mb-6 inline-flex sm:hidden">
+                                        <div className={`relative flex h-16 w-16 items-center justify-center rounded-2xl shadow-lg ${isCTF
+                                            ? "bg-gradient-to-br from-slate-300 via-slate-400 to-slate-500 shadow-slate-400/50"
+                                            : "bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 shadow-yellow-500/50"
+                                            }`}>
+                                            <span className="text-3xl">{award.icon ?? "🏆"}</span>
+                                            <div className={`absolute inset-0 rounded-2xl animate-ping ${isCTF ? "bg-slate-400/30" : "bg-yellow-400/30"
+                                                }`}></div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                {/* Content */}
-                                <div className="space-y-5 sm:pl-16">
-                                    {/* Header with Prize Badge */}
-                                    <div className="flex flex-wrap items-start justify-between gap-4">
-                                        <div className="flex-1 space-y-3">
-                                            {/* Title */}
-                                            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 transition-colors duration-300 group-hover:text-blue-600">
-                                                {award.title}
-                                            </h3>
+                                    {/* Content */}
+                                    <div className="space-y-5 sm:pl-16">
+                                        {/* Header with Prize Badge */}
+                                        <div className="flex flex-wrap items-start justify-between gap-4">
+                                            <div className="flex-1 space-y-3">
+                                                {/* Title */}
+                                                <h3 className={`text-2xl sm:text-3xl font-bold text-slate-900 transition-colors duration-300 ${isCTF ? "group-hover:text-slate-600" : "group-hover:text-blue-600"
+                                                    }`}>
+                                                    {award.title}
+                                                </h3>
 
-                                            {/* Organization & Date */}
-                                            <div className="flex flex-wrap items-center gap-3">
-                                                <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-200/80 bg-gradient-to-r from-purple-50 to-indigo-50/50 px-3 py-1.5 text-xs font-bold text-purple-700 shadow-sm">
-                                                    <span>🎓</span>
-                                                    {award.organization}
-                                                </span>
-                                                <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-600">
-                                                    <span>📅</span>
-                                                    {award.date}
-                                                </span>
+                                                {/* Organization & Date */}
+                                                <div className="flex flex-wrap items-center gap-3">
+                                                    <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-200/80 bg-gradient-to-r from-purple-50 to-indigo-50/50 px-3 py-1.5 text-xs font-bold text-purple-700 shadow-sm">
+                                                        <span>🎓</span>
+                                                        {award.organization}
+                                                    </span>
+                                                    <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-600">
+                                                        <span>📅</span>
+                                                        {award.date}
+                                                    </span>
+                                                    {isCTF && (
+                                                        <span className="inline-flex items-center gap-1.5 rounded-full border border-green-200/80 bg-gradient-to-r from-green-50 to-emerald-50/50 px-3 py-1.5 text-xs font-bold text-green-700 shadow-sm">
+                                                            <span>👥</span>
+                                                            Team &quot;VI KA&quot;
+                                                        </span>
+                                                    )}
+                                                </div>
                                             </div>
+
+                                            {/* Prize Badge */}
+                                            {award.prize && (
+                                                <div className="shrink-0">
+                                                    <div className="relative inline-flex items-center gap-2 overflow-hidden rounded-xl border-2 border-yellow-400/80 bg-gradient-to-br from-yellow-50 via-amber-50 to-yellow-100 px-5 py-3 shadow-lg shadow-yellow-500/20 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-yellow-500/30 group-hover:scale-105">
+                                                        {/* Shine effect */}
+                                                        <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-700 group-hover:translate-x-full"></div>
+                                                        <span className="relative text-2xl">💰</span>
+                                                        <span className="relative text-xl font-black text-yellow-700">{award.prize}</span>
+                                                    </div>
+                                                </div>
+                                            )}
                                         </div>
 
-                                        {/* Prize Badge */}
-                                        {award.prize && (
-                                            <div className="shrink-0">
-                                                <div className="relative inline-flex items-center gap-2 overflow-hidden rounded-xl border-2 border-yellow-400/80 bg-gradient-to-br from-yellow-50 via-amber-50 to-yellow-100 px-5 py-3 shadow-lg shadow-yellow-500/20 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-yellow-500/30 group-hover:scale-105">
-                                                    {/* Shine effect */}
-                                                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-700 group-hover:translate-x-full"></div>
+                                        {/* Divider */}
+                                        <div className="h-px bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200"></div>
 
-                                                    <span className="relative text-2xl">💰</span>
-                                                    <span className="relative text-xl font-black text-yellow-700">{award.prize}</span>
-                                                </div>
+                                        {/* Description */}
+                                        <p className="text-base sm:text-lg leading-relaxed text-slate-600">
+                                            {award.description}
+                                        </p>
+
+                                        {/* Stats/Highlights */}
+                                        {award.stats && (
+                                            <div className="flex flex-wrap gap-4 pt-2">
+                                                {award.stats.map((stat) => (
+                                                    <div
+                                                        key={stat.label}
+                                                        className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2 ${isCTF
+                                                            ? "border-slate-200 bg-slate-50/50"
+                                                            : "border-blue-100 bg-blue-50/50"
+                                                            }`}
+                                                    >
+                                                        <span className="text-lg">{stat.icon}</span>
+                                                        <div className="text-left">
+                                                            <p className={`text-xs font-medium ${isCTF ? "text-slate-500" : "text-blue-600"}`}>{stat.label}</p>
+                                                            <p className={`text-lg font-bold ${isCTF ? "text-slate-700" : "text-blue-700"}`}>{stat.value}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+
+                                        {/* Link */}
+                                        {award.link && (
+                                            <div className="pt-2">
+                                                <a
+                                                    href={award.link.href}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="group/link relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-blue-200/80 bg-gradient-to-r from-blue-50 to-indigo-50/50 px-5 py-3 text-sm font-bold text-blue-700 shadow-sm transition-all duration-300 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-200/50 hover:-translate-y-0.5 hover:scale-105"
+                                                >
+                                                    {/* Shine effect */}
+                                                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-500 group-hover/link:translate-x-full"></div>
+
+                                                    {/* Link icon */}
+                                                    <svg className="relative h-4 w-4 transition-transform duration-300 group-hover/link:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                                                    </svg>
+
+                                                    <span className="relative">{award.link.label}</span>
+
+                                                    {/* Arrow icon */}
+                                                    <svg className="relative h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                    </svg>
+                                                </a>
                                             </div>
                                         )}
                                     </div>
 
-                                    {/* Divider */}
-                                    <div className="h-px bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200"></div>
-
-                                    {/* Description */}
-                                    <p className="text-base sm:text-lg leading-relaxed text-slate-600">
-                                        {award.description}
-                                    </p>
-
-                                    {/* Stats/Highlights */}
-                                    <div className="flex flex-wrap gap-4 pt-2">
-                                        <div className="inline-flex items-center gap-2 rounded-xl border border-blue-100 bg-blue-50/50 px-4 py-2">
-                                            <span className="text-lg">🎯</span>
-                                            <div className="text-left">
-                                                <p className="text-xs font-medium text-blue-600">Competing Projects</p>
-                                                <p className="text-lg font-bold text-blue-700">44</p>
-                                            </div>
-                                        </div>
-                                        <div className="inline-flex items-center gap-2 rounded-xl border border-indigo-100 bg-indigo-50/50 px-4 py-2">
-                                            <span className="text-lg">⭐</span>
-                                            <div className="text-left">
-                                                <p className="text-xs font-medium text-indigo-600">Selection</p>
-                                                <p className="text-lg font-bold text-indigo-700">Winner</p>
-                                            </div>
-                                        </div>
+                                    {/* Bottom corner decoration */}
+                                    <div className="absolute bottom-0 right-0 h-32 w-32 overflow-hidden rounded-br-2xl">
+                                        <div className={`absolute -bottom-16 -right-16 h-32 w-32 rounded-full bg-gradient-to-tl from-blue-100/0 via-yellow-100/0 to-transparent opacity-0 transition-all duration-500 group-hover:opacity-100 ${isCTF
+                                            ? "group-hover:from-slate-100/40 group-hover:via-blue-100/20"
+                                            : "group-hover:from-yellow-100/40 group-hover:via-blue-100/20"
+                                            }`}></div>
                                     </div>
 
-                                    {/* Link */}
-                                    {award.link && (
-                                        <div className="pt-2">
-                                            <a
-                                                href={award.link.href}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="group/link relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-blue-200/80 bg-gradient-to-r from-blue-50 to-indigo-50/50 px-5 py-3 text-sm font-bold text-blue-700 shadow-sm transition-all duration-300 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-200/50 hover:-translate-y-0.5 hover:scale-105"
-                                            >
-                                                {/* Shine effect */}
-                                                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-500 group-hover/link:translate-x-full"></div>
-
-                                                {/* Link icon */}
-                                                <svg className="relative h-4 w-4 transition-transform duration-300 group-hover/link:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                                                </svg>
-
-                                                <span className="relative">{award.link.label}</span>
-
-                                                {/* Arrow icon */}
-                                                <svg className="relative h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    )}
-                                </div>
-
-                                {/* Bottom corner decoration */}
-                                <div className="absolute bottom-0 right-0 h-32 w-32 overflow-hidden rounded-br-2xl">
-                                    <div className="absolute -bottom-16 -right-16 h-32 w-32 rounded-full bg-gradient-to-tl from-blue-100/0 via-yellow-100/0 to-transparent opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:from-yellow-100/40 group-hover:via-blue-100/20"></div>
-                                </div>
-
-                                {/* Confetti particles on hover */}
-                                <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
-                                    <div className={`absolute top-1/4 left-1/4 h-2 w-2 rounded-full bg-yellow-400 opacity-0 transition-all duration-700 group-hover:opacity-100 group-hover:-translate-y-8 group-hover:translate-x-4`}></div>
-                                    <div className={`absolute top-1/3 right-1/4 h-1.5 w-1.5 rounded-full bg-blue-400 opacity-0 transition-all duration-700 delay-75 group-hover:opacity-100 group-hover:-translate-y-12 group-hover:-translate-x-6`}></div>
-                                    <div className={`absolute top-1/2 left-1/3 h-2 w-2 rounded-full bg-purple-400 opacity-0 transition-all duration-700 delay-150 group-hover:opacity-100 group-hover:translate-y-8 group-hover:-translate-x-4`}></div>
-                                    <div className={`absolute bottom-1/4 right-1/3 h-1.5 w-1.5 rounded-full bg-indigo-400 opacity-0 transition-all duration-700 delay-100 group-hover:opacity-100 group-hover:translate-y-10 group-hover:translate-x-8`}></div>
+                                    {/* Confetti particles on hover */}
+                                    <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
+                                        <div className={`absolute top-1/4 left-1/4 h-2 w-2 rounded-full opacity-0 transition-all duration-700 group-hover:opacity-100 group-hover:-translate-y-8 group-hover:translate-x-4 ${isCTF ? "bg-slate-400" : "bg-yellow-400"}`}></div>
+                                        <div className={`absolute top-1/3 right-1/4 h-1.5 w-1.5 rounded-full opacity-0 transition-all duration-700 delay-75 group-hover:opacity-100 group-hover:-translate-y-12 group-hover:-translate-x-6 ${isCTF ? "bg-green-400" : "bg-blue-400"}`}></div>
+                                        <div className={`absolute top-1/2 left-1/3 h-2 w-2 rounded-full opacity-0 transition-all duration-700 delay-150 group-hover:opacity-100 group-hover:translate-y-8 group-hover:-translate-x-4 ${isCTF ? "bg-blue-400" : "bg-purple-400"}`}></div>
+                                        <div className={`absolute bottom-1/4 right-1/3 h-1.5 w-1.5 rounded-full opacity-0 transition-all duration-700 delay-100 group-hover:opacity-100 group-hover:translate-y-10 group-hover:translate-x-8 ${isCTF ? "bg-indigo-400" : "bg-indigo-400"}`}></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
 
                 {/* Bottom decoration */}
