@@ -226,7 +226,7 @@ export function Chat() {
                                         🚀 Tech stack
                                     </button>
                                     <button
-                                        onClick={() => setInputValue("Tell me about your Datalex award")}
+                                        onClick={() => setInputValue("Tell me about your awards")}
                                         className="group/suggestion rounded-full border border-purple-200 bg-purple-50 px-4 py-2 text-xs font-medium text-purple-700 transition-all duration-300 hover:border-purple-300 hover:bg-purple-100 hover:scale-105"
                                     >
                                         🏆 Awards

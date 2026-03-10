@@ -52,8 +52,8 @@ export default async function handler(req: any, res: any) {
             res.status(400).json({ error: 'Invalid message' });
             return;
         }
-
-        const apiKey = process.env.PERPLEXITY_API_KEY;
+        console.log('GROQ_API_KEY:', !!process.env.GROQ_API_KEY ? 'OK' : 'MISSING');
+        const apiKey = process.env.GROQ_API_KEY;
         if (!apiKey) {
             res.status(500).json({ error: 'API key missing' });
             return;
@@ -68,14 +68,14 @@ export default async function handler(req: any, res: any) {
             { role: 'user', content: message }
         ];
 
-        const response = await fetch('https://api.perplexity.ai/chat/completions', {
+        const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${apiKey}`,
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                model: 'sonar',
+                model: 'llama-3.1-8b-instant',
                 messages,
                 max_tokens: 500,
                 temperature: 0.7,
@@ -85,7 +85,7 @@ export default async function handler(req: any, res: any) {
 
         if (!response.ok) {
             const error = await response.json();
-            console.error('Perplexity:', error);
+            console.error('Groq:', error);
             res.status(500).json({ error: 'AI service error' });
             return;
         }

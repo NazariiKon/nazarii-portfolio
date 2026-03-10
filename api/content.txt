@@ -42,6 +42,7 @@ Backend.
 
 HONORS / AWARDS
 Datalex “Best Project” Award 2025: Winner of the €2,500 Datalex Best DIME Project Award at DCU (selected from 44 projects; award shared across my group).
+CompSoc Annual CTF 2026: Placed 2nd out of 30 teams competing from across Ireland in Annual CTF — one of the country's largest student-run Capture the Flag competitions. Competing as team "VI KA", solved challenges across web security, cryptography, and forensics.
 
 EDUCATION
 Dublin City University (DCU): BSc in Computer Science, Sep 2024 - May 2028 (Dublin, Ireland).
