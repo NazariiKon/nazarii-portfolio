@@ -53,6 +53,16 @@ const projects: Project[] = [
         images: PROJECTS_IMAGES.diploma,
     },
     {
+        id: "simpleshell",
+        title: "SimpleShell",
+        period: "Mar 2026 - Apr 2026",
+        subtitle: "Custom UNIX Command Line Interpreter",
+        description: "A functional command line shell developed in C for Linux environments. The application implements core operating system concepts including process creation, environment management, input and output redirection, background execution and batch script processing.",
+        tech: ["C", "Linux", "POSIX API", "Make"],
+        images: PROJECTS_IMAGES.simpleshell,
+        githubUrl: "https://gitlab.computing.dcu.ie/nazarii.konechnyi2/2026-simpleshell",
+    },
+    {
         id: "college-reception",
         title: "College Reception",
         period: "Apr 2023",

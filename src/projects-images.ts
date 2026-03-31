@@ -2,6 +2,9 @@ export const PROJECTS_IMAGES = {
   "applePicker": [
     "/projects/applePicker/main.png"
   ],
+  "simpleshell": [
+    ""
+  ],
   "books": [
     "/projects/books/crop.png",
     "/projects/books/endpoints.png",

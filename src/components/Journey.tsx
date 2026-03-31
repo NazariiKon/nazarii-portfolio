@@ -58,21 +58,21 @@ const items: TimelineItem[] = [
             { label: "View Diploma", href: "/IT_STEP.pdf" }
         ],
     },
-    {
-        id: "honeycomb-internship",
-        type: "work",
-        period: "Jun 2022 - Sep 2022",
-        title: "Full-Stack Developer Intern",
-        org: "Honeycomb Software",
-        mode: "On-site",
-        bullets: [
-            "Developed and tested features using React (frontend) and .NET (backend).",
-            "Worked in an Agile team: daily stand-ups, sprint planning, code reviews.",
-            "Used Git for version control (branches, pull requests, reviews).",
-            "Integrated REST APIs to connect frontend components with backend services.",
-            "Debugged and fixed 10+ minor bugs to improve module stability.",
-        ],
-    },
+    // {
+    //     id: "honeycomb-internship",
+    //     type: "work",
+    //     period: "Jun 2022 - Sep 2022",
+    //     title: "Full-Stack Developer Intern",
+    //     org: "Honeycomb Software",
+    //     mode: "On-site",
+    //     bullets: [
+    //         "Developed and tested features using React (frontend) and .NET (backend).",
+    //         "Worked in an Agile team: daily stand-ups, sprint planning, code reviews.",
+    //         "Used Git for version control (branches, pull requests, reviews).",
+    //         "Integrated REST APIs to connect frontend components with backend services.",
+    //         "Debugged and fixed 10+ minor bugs to improve module stability.",
+    //     ],
+    // },
 ];
 
 const badgeClass = (type: TimelineType) =>
