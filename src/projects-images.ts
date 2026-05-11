@@ -83,5 +83,10 @@ export const PROJECTS_IMAGES = {
     "/projects/shopAndroid/api.png",
     "/projects/shopAndroid/login.png",
     "/projects/shopAndroid/main.png"
+  ],
+  "scamdetector": [
+    "/projects/scammessagedetector/1.png",
+    "/projects/scammessagedetector/2.png",
+    "/projects/scammessagedetector/3.png"
   ]
 };

@@ -52,7 +52,6 @@ export default async function handler(req: any, res: any) {
             res.status(400).json({ error: 'Invalid message' });
             return;
         }
-        console.log('GROQ_API_KEY:', !!process.env.GROQ_API_KEY ? 'OK' : 'MISSING');
         const apiKey = process.env.GROQ_API_KEY;
         if (!apiKey) {
             res.status(500).json({ error: 'API key missing' });

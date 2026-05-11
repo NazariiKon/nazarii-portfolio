@@ -53,9 +53,21 @@ const projects: Project[] = [
         images: PROJECTS_IMAGES.diploma,
     },
     {
+        id: "scamdetector",
+        title: "Scam Message Detector Prototype",
+        period: "Apr 2026",
+        subtitle: "AI-powered Android application built for the Norton AI-First Assignment to identify phishing and scam messages using LLM analysis",
+        description:
+            "Developed a mobile security prototype that analyzes SMS, emails, and URLs for potential threats. Implemented prompt engineering to force structured JSON responses from the Groq LLM API, ensuring high-accuracy risk assessments. Focused on performance optimization using Jetpack Compose, state management with Hilt/ViewModel, and robust unit testing with Mockito. Integrated production-level security by managing API keys via BuildConfig and optimizing UI stability with @Immutable state classes.",
+        tech: ["Kotlin", "Jetpack Compose", "Groq AI API", "Hilt", "Retrofit", "Mockito", "Coroutines", "Material 3"],
+        githubUrl: "https://github.com/NazariiKon/norton-aifirst-intern-nazarii-konechnyi",
+        liveUrl: "https://youtu.be/vPtWdLEZ9Uo",
+        images: PROJECTS_IMAGES.scamdetector,
+    },
+    {
         id: "simpleshell",
         title: "SimpleShell",
-        period: "Mar 2026 - Apr 2026",
+        period: "Mar - Apr 2026",
         subtitle: "Custom UNIX Command Line Interpreter",
         description: "A functional command line shell developed in C for Linux environments. The application implements core operating system concepts including process creation, environment management, input and output redirection, background execution and batch script processing.",
         tech: ["C", "Linux", "POSIX API", "Make"],

@@ -49,7 +49,7 @@ export function Chat() {
         setIsTyping(true);
         setError(null);
 
-        if (chatCount >= 6) {
+        if (chatCount >= 30) {
             setShowStarModal(true);
             localStorage.setItem('chatCount', chatCount.toString());
             setIsTyping(false);
