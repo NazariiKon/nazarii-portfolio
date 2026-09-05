@@ -78,7 +78,7 @@ export function Chat() {
             if (data.isLimit) {
                 const baitMessage: Message = {
                     id: (Date.now() + 1).toString(),
-                    text: data.message,
+                    text: data.message || "I've reached my chat limit for now. Please come back later.",
                     sender: "assistant",
                     timestamp: new Date(),
                 };

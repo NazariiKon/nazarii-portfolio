@@ -21,8 +21,12 @@ A personal portfolio website built with React and Tailwind CSS. It showcases my 
 1) Install dependencies
 npm install
 
-2) Start dev server
-npm run dev
+2) Start the frontend and API server
+npm run dev:vercel
+
+Use Vercel's local runtime for development so the `/api/chat` function is
+available at the same time as the Vite frontend. `npm run dev` starts only the
+frontend and does not provide API routes.
 
 ## Updating project screenshots
 1. Add screenshots to `/public/projects/[project-name]/`

@@ -40,10 +40,11 @@ export default async function handler(req: any, res: any) {
 
         const { message, history = [], chatCount = 0 } = bodyRaw as ChatRequest;
 
-        if (chatCount >= 10) {
+        if (chatCount >= 30) {
             res.status(200).json({
                 role: 'assistant',
-                isLimit: true
+                isLimit: true,
+                message: "I've reached my chat limit for now. Please come back later."
             });
             return;
         }
@@ -74,7 +75,7 @@ export default async function handler(req: any, res: any) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                model: 'llama-3.1-8b-instant',
+                model: 'openai/gpt-oss-20b',
                 messages,
                 max_tokens: 500,
                 temperature: 0.7,
