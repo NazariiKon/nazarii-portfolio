@@ -14,6 +14,20 @@ type TimelineItem = {
 
 const items: TimelineItem[] = [
     {
+        id: "microsoft-internship",
+        type: "work",
+        period: "Jun 2026 - Sep 2026",
+        title: "Software Engineering Intern",
+        org: "Microsoft - Identity and Network Access",
+        mode: "Dublin, Ireland",
+        bullets: [
+            "Merged 24 pull requests, including migrating 8 authentication and session artifact types from a legacy protection format to a newer signing and validation format while preserving backward compatibility.",
+            "Developed reusable migration infrastructure and data-driven test frameworks, standardising validation across up to 37 artifact types and reducing repeated implementation work.",
+            "Supported the safe rollout and validation of 10 production features and configuration changes through staged deployments, telemetry analysis, controlled test environments, and rollback planning.",
+            "Created a local UX-test AI skill that reduced targeted feedback turnaround from 1-2 hours in the cloud to 5 minutes, and updated an artifact-onboarding AI skill with reusable architectural and testing guidance.",
+        ],
+    },
+    {
         id: "dcu-bsc",
         type: "education",
         period: "Sep 2024 - May 2028",

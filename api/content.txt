@@ -26,7 +26,7 @@ Computer Science student at Dublin City University and full-stack developer focu
 PROFILE (ABOUT ME)
 I'm a Computer Science student at Dublin City University (expected graduation May 2028) with strong foundations in data structures, algorithms, and software design.
 I build full-stack applications using React/Next.js/TypeScript on the frontend and FastAPI/.NET/ASP.NET Core on the backend, usually with PostgreSQL/Supabase.
-I have real team experience from a full-stack internship where I shipped features, integrated REST APIs, and fixed production bugs in an Agile workflow.
+I completed a Software Engineering Internship at Microsoft on the Identity and Network Access team in Dublin from June to September 2026. I merged 24 pull requests, worked on authentication and session artifact migrations, supported production rollouts, and built reusable migration and testing infrastructure.
 I'm motivated, reliable, and I enjoy learning new technologies while writing clean, maintainable code.
 I'm authorized to work in Ireland with valid documentation.
 
@@ -34,6 +34,13 @@ LANGUAGES
 Ukrainian: Native / Bilingual.
 English: Full Professional.
 Russian: Native / Bilingual.
+
+WORK EXPERIENCE
+Software Engineering Intern, Microsoft - Identity and Network Access team: Dublin, Ireland, June 2026 - September 2026.
+Merged 24 pull requests, including migrating 8 authentication and session artifact types from a legacy protection format to a newer signing and validation format while preserving backward compatibility.
+Developed reusable migration infrastructure and data-driven test frameworks, standardising validation across up to 37 artifact types and reducing repeated implementation work.
+Supported the safe rollout and validation of 10 production features and configuration changes through staged deployments, telemetry analysis, controlled test environments, and rollback planning.
+Created a local UX-test AI skill that reduced targeted feedback turnaround from 1-2 hours in the cloud to 5 minutes, and updated an artifact-onboarding AI skill with reusable architectural and testing guidance.
 
 TOP SKILLS
 React.

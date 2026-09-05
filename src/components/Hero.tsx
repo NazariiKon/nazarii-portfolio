@@ -42,8 +42,7 @@ export function Hero() {
 
                     {/* Description */}
                     <p className="max-w-xl text-lg leading-relaxed text-slate-600 sm:text-xl">
-                        Second-year Computer Science student who enjoys full-stack web development.
-                        I build small but real projects, experiment with modern web tech, and constantly refine how I write and ship code.
+                        Ex-Software Engineering Intern at Microsoft and Computer Science student at Dublin City University, with experience contributing to a large-scale authentication platform and building full-stack applications. Skilled in developing secure, scalable backend solutions, automated test infrastructure, telemetry-driven validation, and safe production rollouts in collaborative engineering environments.
                     </p>
 
                     {/* CTA Buttons */}
